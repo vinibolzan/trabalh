@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Iron Gym | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">IRON <span style="color:#d32f2f">GYM</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="loja.html">Loja</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>FOCO & DISCIPLINA</h1>
+    <button class="btn" onclick="document.getElementById('agendar').scrollIntoView()">Agendar Aula</button>
+</section>
+
+<section id="professores">
+    <h2>Nossos Professores</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Mestre Ryu</h3>
+            <p>Artes Marciais</p>
+            <button class="btn" onclick="abrirChat('Mestre Ryu')">Chat Privado</button>
+        </div>
+        <div class="card">
+            <h3>Profª Ana</h3>
+            <p>Musculação</p>
+            <button class="btn" onclick="abrirChat('Profª Ana')">Chat Privado</button>
+        </div>
+    </div>
+</section>
+
+<section id="agendar" class="card" style="max-width: 500px; margin: 20px auto;">
+    <h2>Agendamento Online</h2>
+    <form onsubmit="event.preventDefault(); alert('Aula agendada com sucesso!');">
+        <input type="text" placeholder="Seu Nome" required style="width:100%; margin:10px 0; padding:10px;">
+        <select style="width:100%; margin:10px 0; padding:10px;">
+            <option>Musculação</option>
+            <option>Muay Thai</option>
+            <option>Jiu-Jitsu</option>
+        </select>
+        <input type="date" required style="width:100%; margin:10px 0; padding:10px;">
+        <button type="submit" class="btn">Confirmar Horário</button>
+    </form>
+</section>
+
+<div id="janela-chat" style="display:none; position:fixed; bottom:20px; right:20px; width:300px; background:#1e1e1e; border:2px solid #d32f2f; border-radius:10px; z-index:2000;">
+    <div style="background:#d32f2f; padding:10px; display:flex; justify-content:space-between;">
+        <span id="nome-prof">Chat</span>
+        <button onclick="fecharChat()" style="background:none; border:none; color:white; cursor:pointer;">X</button>
+    </div>
+    <div id="chat-msgs" style="height:200px; padding:10px; overflow-y:auto; color:#ccc;">
+        <p>Olá! Em que posso ajudar no seu treino?</p>
+    </div>
+    <input type="text" placeholder="Digite sua dúvida..." style="width:100%; padding:10px; background:#333; color:white; border:none;">
+</div>
+
+<script>
+    function abrirChat(nome) {
+        document.getElementById('janela-chat').style.display = 'block';
+        document.getElementById('nome-prof').innerText = "Chat com " + nome;
+    }
+    function fecharChat() {
+        document.getElementById('janela-chat').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

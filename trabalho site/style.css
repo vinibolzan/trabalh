@@ -1,0 +1,92 @@
+:root {
+    --primary: #d32f2f; /* Vermelho */
+    --accent: #ffcc00;  /* Dourado */
+    --bg: #121212;      /* Fundo Dark */
+    --card: #1e1e1e;    /* Fundo dos Cards */
+    --text: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    scroll-behavior: smooth;
+}
+
+/* Menu de Navegação */
+header {
+    background: #000;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--primary);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover { color: var(--accent); }
+
+/* Banner Principal */
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+}
+
+/* Cards e Seções */
+section { padding: 50px 10%; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    border-bottom: 3px solid var(--primary);
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+.btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Chat Flutuante */
+#chat-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: black;
+    padding: 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
